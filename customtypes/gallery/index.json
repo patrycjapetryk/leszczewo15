@@ -1,0 +1,35 @@
+{
+  "id": "gallery",
+  "label": "Gallery",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "gallery": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "places",
+  "type": "SharedSlice",
+  "name": "Places",
+  "description": "Places",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "text": {
+          "type": "Text",
+          "config": {
+            "label": "Text",
+            "placeholder": ""
+          }
+        },
+        "category": {
+          "type": "Select",
+          "config": {
+            "label": "Category",
+            "placeholder": "Category",
+            "options": [
+              "Plaża",
+              "Zwiedzanie",
+              "Jedzenie",
+              "Atrakcje",
+              "Dla dzieci",
+              "Inne"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "id": "gallery",
+  "type": "SharedSlice",
+  "name": "Gallery",
+  "description": "Gallery",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "photo": {
+          "type": "Image",
+          "config": {
+            "label": "Photo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "video",
+      "name": "Video",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "video": {
+          "type": "Embed",
+          "config": {
+            "label": "Video",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "vertical",
+      "name": "Vertical",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "photo1": {
+          "type": "Image",
+          "config": {
+            "label": "Photo1",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "description1": {
+          "type": "Text",
+          "config": {
+            "label": "Description1",
+            "placeholder": ""
+          }
+        },
+        "photo2": {
+          "type": "Image",
+          "config": {
+            "label": "Photo2",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "description2": {
+          "type": "Text",
+          "config": {
+            "label": "Description2",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "verticalVideo",
+      "name": "Vertical video",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "photo": {
+          "type": "Image",
+          "config": {
+            "label": "Photo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "description1": {
+          "type": "Text",
+          "config": {
+            "label": "Description1",
+            "placeholder": ""
+          }
+        },
+        "video": {
+          "type": "Embed",
+          "config": {
+            "label": "Video",
+            "placeholder": ""
+          }
+        },
+        "description2": {
+          "type": "Text",
+          "config": {
+            "label": "Description2",
+            "placeholder": ""
+          }
+        },
+        "left_video": {
+          "type": "Boolean",
+          "config": {
+            "label": "Left video",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

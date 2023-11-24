@@ -6,7 +6,13 @@
   "status": true,
   "json": {
     "Main": {
-      "uid": { "type": "UID", "config": { "label": "UID", "placeholder": "" } },
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        }
+      },
       "title": {
         "type": "StructuredText",
         "config": {
@@ -16,10 +22,33 @@
           "single": "heading1"
         }
       },
+      "gallery": {
+        "type": "Link",
+        "config": {
+          "label": "Gallery",
+          "select": "document",
+          "customtypes": ["gallery"]
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,hyperlink,em"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
-        "config": { "choices": { "rich_text": { "type": "SharedSlice" } } }
+        "config": {
+          "choices": {
+            "places": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     },
     "SEO & Metadata": {
@@ -41,7 +70,10 @@
         "type": "Image",
         "config": {
           "label": "Meta Image",
-          "constraint": { "width": 2400, "height": 1260 },
+          "constraint": {
+            "width": 2400,
+            "height": 1260
+          },
           "thumbnails": []
         }
       }
