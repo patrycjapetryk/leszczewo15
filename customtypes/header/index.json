@@ -1,6 +1,6 @@
 {
-  "id": "settings",
-  "label": "Settings",
+  "id": "header",
+  "label": "Header",
   "format": "custom",
   "repeatable": false,
   "status": true,
@@ -23,7 +23,6 @@
               "config": {
                 "label": "Link",
                 "placeholder": "",
-                "allowTargetBlank": false,
                 "select": null
               }
             },
@@ -35,20 +34,6 @@
               }
             }
           }
-        }
-      },
-      "email": {
-        "type": "Text",
-        "config": {
-          "label": "Email",
-          "placeholder": ""
-        }
-      },
-      "phone": {
-        "type": "Text",
-        "config": {
-          "label": "Phone",
-          "placeholder": ""
         }
       }
     }

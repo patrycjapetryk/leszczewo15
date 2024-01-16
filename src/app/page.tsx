@@ -1,44 +1,43 @@
 import { Metadata } from 'next';
 
-import { PrismicRichText, SliceZone } from '@prismicio/react';
+import { SliceZone } from '@prismicio/react';
 import * as prismic from '@prismicio/client';
 import { Content } from '@prismicio/client';
 
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 
+import ArticlesWrapper from '@/components/ArticlesWrapper';
+import GalleryWrapper from '@/components/GalleryWrapper';
+import Article from '@/components/Article';
+
+export type PageProps = Content.PageDocument & {
+  data: {
+    gallery: {
+      uid: Pick<Content.GalleryDocument, 'uid'>;
+    };
+  };
+};
+
 export default async function Index() {
   const client = createClient();
-  const home = await client.getByUID<
-    Content.PageDocument & {
-      data: {
-        gallery: {
-          uid: Pick<Content.GalleryDocument, 'uid'>;
-        };
-      };
-    }
-  >('page', 'home');
+  const home = await client.getByUID<PageProps>('page', 'home');
 
-  const { description, slices } = home.data;
+  const { description, slices, teaser } = home.data;
 
   const galleryUid = home.data.gallery.uid as string;
   const gallery = await client.getByUID('gallery', galleryUid);
 
   return (
-    <main>
-      <section>
-        <PrismicRichText
-          field={description}
-          components={{
-            paragraph: ({ children }) => <p className='text-m'>{children}</p>,
-          }}
-        />
+    <main className="w-full xl:flex xl:justify-end">
+      <ArticlesWrapper>
+        <Article description={description} teaser={teaser} />
         <SliceZone slices={slices} components={components} />
-      </section>
+      </ArticlesWrapper>
 
-      <section>
+      <GalleryWrapper>
         <SliceZone slices={gallery.data.slices} components={components} />
-      </section>
+      </GalleryWrapper>
     </main>
   );
 }

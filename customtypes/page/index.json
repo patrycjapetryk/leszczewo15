@@ -36,7 +36,14 @@
           "label": "Description",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "paragraph,strong,hyperlink,em"
+          "multi": "strong,em,hyperlink"
+        }
+      },
+      "teaser": {
+        "type": "Text",
+        "config": {
+          "label": "Teaser",
+          "placeholder": ""
         }
       },
       "slices": {

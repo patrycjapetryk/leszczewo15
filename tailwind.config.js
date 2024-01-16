@@ -12,10 +12,11 @@ module.exports = {
         body: ['var(--font-red-hat-mono)'],
         display: ['var(--font-chewy)'],
       },
-      fontSize: {
-        m: '0.8rem',
+      screens: {
+        xs: '400px',
+        '1xl': '1440px',
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss'), require('autoprefixer')],
 };

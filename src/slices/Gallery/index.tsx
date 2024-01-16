@@ -11,14 +11,31 @@ export default async function Gallery({ slice }: GalleryProps) {
     const { photo1, photo2, description1, description2 } = primary;
 
     return (
-      <section data-slice-type={slice_type} data-slice-variation={variation}>
-        <figure>
-          <PrismicNextImage field={photo1} imgixParams={{ q: 80 }} />
-          <figcaption>{description1}</figcaption>
+      <section
+        className="flex w-full gap-2 xs:gap-3 xl:gap-4"
+        data-slice-type={slice_type}
+        data-slice-variation={variation}
+      >
+        <figure className="w-full">
+          <PrismicNextImage
+            className="w-full"
+            field={photo1}
+            imgixParams={{ q: 80 }}
+          />
+          <figcaption className="mb-4 mt-1 text-sm tracking-tighter">
+            {description1}
+          </figcaption>
         </figure>
-        <figure>
-          <PrismicNextImage field={photo2} imgixParams={{ q: 80 }} />
-          <figcaption>{description2}</figcaption>
+
+        <figure className="w-full">
+          <PrismicNextImage
+            className="w-full"
+            field={photo2}
+            imgixParams={{ q: 80 }}
+          />
+          <figcaption className="mb-4 mt-1 text-sm tracking-tighter">
+            {description2}
+          </figcaption>
         </figure>
       </section>
     );
@@ -27,9 +44,15 @@ export default async function Gallery({ slice }: GalleryProps) {
 
     return (
       <section data-slice-type={slice_type} data-slice-variation={variation}>
-        <figure>
-          <PrismicNextImage field={photo} imgixParams={{ q: 80 }} />
-          <figcaption>{description}</figcaption>
+        <figure className="w-full">
+          <PrismicNextImage
+            className="w-full"
+            field={photo}
+            imgixParams={{ q: 80 }}
+          />
+          <figcaption className="mb-4 mt-1 text-sm tracking-tighter">
+            {description}
+          </figcaption>
         </figure>
       </section>
     );
