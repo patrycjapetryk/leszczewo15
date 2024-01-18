@@ -40,7 +40,7 @@ export default async function Gallery({ slice }: GalleryProps) {
       </section>
     );
   } else if (variation === 'default') {
-    const { photo, description } = primary;
+    const { photo, description, priority } = primary;
 
     return (
       <section data-slice-type={slice_type} data-slice-variation={variation}>
@@ -49,6 +49,7 @@ export default async function Gallery({ slice }: GalleryProps) {
             className="w-full"
             field={photo}
             imgixParams={{ q: 80 }}
+            priority={priority ? true : false}
           />
           <figcaption className="mb-4 mt-1 text-sm tracking-tighter">
             {description}

@@ -160,7 +160,7 @@ export type HeaderDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = PlacesSlice;
+type PageDocumentDataSlicesSlice = never;
 
 /**
  * Content for Page documents
@@ -265,11 +265,110 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, 'page', Lang>;
 
+type PlacesDocumentDataSlicesSlice = PlacesSlice;
+
+/**
+ * Content for Places documents
+ */
+interface PlacesDocumentData {
+  /**
+   * Title field in *Places*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: places.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Gallery field in *Places*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: places.gallery
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  gallery: prismic.ContentRelationshipField<'gallery'>;
+
+  /**
+   * Description field in *Places*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: places.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Places*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: places.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PlacesDocumentDataSlicesSlice> /**
+   * Meta Description field in *Places*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: places.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Places*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: places.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Places*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: places.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Places document from Prismic
+ *
+ * - **API ID**: `places`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PlacesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PlacesDocumentData>,
+    'places',
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | FooterDocument
   | GalleryDocument
   | HeaderDocument
-  | PageDocument;
+  | PageDocument
+  | PlacesDocument;
 
 /**
  * Primary content in *Gallery → Primary*
@@ -294,6 +393,17 @@ export interface GallerySliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   description: prismic.KeyTextField;
+
+  /**
+   * Priority field in *Gallery → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: gallery.primary.priority
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  priority: prismic.BooleanField;
 }
 
 /**
@@ -580,6 +690,9 @@ declare module '@prismicio/client' {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PlacesDocument,
+      PlacesDocumentData,
+      PlacesDocumentDataSlicesSlice,
       AllDocumentTypes,
       GallerySlice,
       GallerySliceDefaultPrimary,

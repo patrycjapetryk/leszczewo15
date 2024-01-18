@@ -30,6 +30,10 @@
 				"__TYPE__": "FieldContent",
 				"value": "be",
 				"type": "Text"
+			},
+			"priority": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": [

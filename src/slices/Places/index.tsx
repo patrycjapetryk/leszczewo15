@@ -7,7 +7,11 @@ export default async function Places({ slice }: PlacesProps) {
   const { title, text } = slice.primary;
 
   return (
-    <article data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+    <article
+      className="mb-6"
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+    >
       <h2>{title}</h2>
       <p>{text}</p>
     </article>

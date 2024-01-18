@@ -26,6 +26,15 @@
             "label": "Description",
             "placeholder": ""
           }
+        },
+        "priority": {
+          "type": "Boolean",
+          "config": {
+            "label": "Priority",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
         }
       },
       "items": {}
