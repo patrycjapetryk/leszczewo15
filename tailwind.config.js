@@ -16,6 +16,10 @@ module.exports = {
         xs: '400px',
         '1xl': '1440px',
       },
+      rotate: {
+        5: '5deg',
+        10: '10deg',
+      },
     },
   },
   plugins: [require('tailwindcss'), require('autoprefixer')],

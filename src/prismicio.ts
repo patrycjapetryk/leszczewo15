@@ -23,7 +23,7 @@ const routes: prismic.ClientConfig['routes'] = [
   },
   {
     type: 'places',
-    path: '/places',
+    path: '/okolica',
   },
 ];
 

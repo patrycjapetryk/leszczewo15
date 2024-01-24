@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import { SliceZone, PrismicRichText } from '@prismicio/react';
+import { SliceZone } from '@prismicio/react';
 import * as prismic from '@prismicio/client';
 import { Content } from '@prismicio/client';
 
