@@ -160,6 +160,100 @@ export type HeaderDocument<Lang extends string = string> =
     Lang
   >;
 
+type MapDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Map documents
+ */
+interface MapDocumentData {
+  /**
+   * Title field in *Map*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: map.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Map field in *Map*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: map.map
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  map: prismic.KeyTextField;
+
+  /**
+   * Description field in *Map*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: map.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Map*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: map.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<MapDocumentDataSlicesSlice> /**
+   * Meta Description field in *Map*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: map.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Map*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: map.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Map*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: map.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Map document from Prismic
+ *
+ * - **API ID**: `map`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MapDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<MapDocumentData>, 'map', Lang>;
+
 type PageDocumentDataSlicesSlice = never;
 
 /**
@@ -367,6 +461,7 @@ export type AllDocumentTypes =
   | FooterDocument
   | GalleryDocument
   | HeaderDocument
+  | MapDocument
   | PageDocument
   | PlacesDocument;
 
@@ -687,6 +782,9 @@ declare module '@prismicio/client' {
       HeaderDocument,
       HeaderDocumentData,
       HeaderDocumentDataNavigationItem,
+      MapDocument,
+      MapDocumentData,
+      MapDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

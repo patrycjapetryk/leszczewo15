@@ -9,6 +9,8 @@ import { components } from '@/slices';
 
 import ArticlesWrapper from '@/components/ArticlesWrapper';
 import GalleryWrapper from '@/components/GalleryWrapper';
+import Places from '@/components/Places';
+import Link from 'next/link';
 
 export type PlacesProps = Content.PlacesDocument & {
   data: {
@@ -22,7 +24,7 @@ export default async function Index() {
   const client = createClient();
   const places = await client.getSingle<PlacesProps>('places');
 
-  const { description, slices } = places.data;
+  const { description } = places.data;
 
   const galleryUid = places.data.gallery.uid as string;
   const gallery = await client.getByUID('gallery', galleryUid);
@@ -31,7 +33,10 @@ export default async function Index() {
     <main className="w-full xl:flex xl:justify-end">
       <ArticlesWrapper>
         <p className="mb-6">{description}</p>
-        <SliceZone slices={slices} components={components} />
+        <Link className="mb-6 block" href="/mapa/okolica">
+          Zobacz na mapie
+        </Link>
+        <Places data={places.data} />
       </ArticlesWrapper>
 
       <GalleryWrapper>

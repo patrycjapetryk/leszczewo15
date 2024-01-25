@@ -2,12 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { PrismicNextLink } from '@prismicio/next';
-import {
-  CustomTypeModelLinkField,
-  GroupField,
-  KeyTextField,
-  LinkField,
-} from '@prismicio/client';
+import { GroupField, LinkField } from '@prismicio/client';
 
 import {
   HeaderDocumentDataNavigationItem,

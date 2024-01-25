@@ -25,6 +25,10 @@ const routes: prismic.ClientConfig['routes'] = [
     type: 'places',
     path: '/okolica',
   },
+  {
+    type: 'map',
+    path: '/mapa/:uid',
+  },
 ];
 
 /**
