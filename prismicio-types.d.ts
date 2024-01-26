@@ -54,17 +54,6 @@ type GalleryDocumentDataSlicesSlice = GallerySlice;
  */
 interface GalleryDocumentData {
   /**
-   * Title field in *Gallery*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gallery.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
    * Slice Zone field in *Gallery*
    *
    * - **Field Type**: Slice Zone
