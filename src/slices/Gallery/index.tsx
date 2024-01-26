@@ -18,9 +18,9 @@ export default async function Gallery({ slice }: GalleryProps) {
       >
         <figure className="w-full">
           <PrismicNextImage
-            className="w-full"
+            className="w-full bg-sage"
             field={photo1}
-            imgixParams={{ q: 80 }}
+            imgixParams={{ q: 50 }}
           />
           <figcaption className="mb-4 mt-1 text-sm tracking-tighter">
             {description1}
@@ -29,9 +29,9 @@ export default async function Gallery({ slice }: GalleryProps) {
 
         <figure className="w-full">
           <PrismicNextImage
-            className="w-full"
+            className="w-full bg-sage"
             field={photo2}
-            imgixParams={{ q: 80 }}
+            imgixParams={{ q: 50 }}
           />
           <figcaption className="mb-4 mt-1 text-sm tracking-tighter">
             {description2}
@@ -46,9 +46,9 @@ export default async function Gallery({ slice }: GalleryProps) {
       <section data-slice-type={slice_type} data-slice-variation={variation}>
         <figure className="w-full">
           <PrismicNextImage
-            className="w-full"
+            className="w-full bg-sage"
             field={photo}
-            imgixParams={{ q: 80 }}
+            imgixParams={{ q: 50 }}
             priority={priority ? true : false}
           />
           <figcaption className="mb-4 mt-1 text-sm tracking-tighter">
