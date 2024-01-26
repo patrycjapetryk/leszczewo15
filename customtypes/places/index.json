@@ -6,13 +6,6 @@
   "status": true,
   "json": {
     "Main": {
-      "title": {
-        "type": "Text",
-        "config": {
-          "label": "Title",
-          "placeholder": ""
-        }
-      },
       "gallery": {
         "type": "Link",
         "config": {

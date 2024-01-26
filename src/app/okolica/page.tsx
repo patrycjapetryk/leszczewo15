@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 
 import { SliceZone } from '@prismicio/react';
-import * as prismic from '@prismicio/client';
 import { Content } from '@prismicio/client';
 
 import { createClient } from '@/prismicio';
@@ -48,16 +47,16 @@ export default async function Index() {
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
-  const home = await client.getByUID('page', 'home');
+  const places = await client.getSingle<PlacesProps>('places');
 
   return {
-    title: prismic.asText(home.data.title),
-    description: home.data.meta_description,
+    title: places.data.meta_title,
+    description: places.data.meta_description,
     openGraph: {
-      title: home.data.meta_title || undefined,
+      title: places.data.meta_title || undefined,
       images: [
         {
-          url: home.data.meta_image.url || '',
+          url: places.data.meta_image.url || '',
         },
       ],
     },

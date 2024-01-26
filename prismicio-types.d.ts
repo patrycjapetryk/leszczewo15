@@ -167,17 +167,6 @@ type MapDocumentDataSlicesSlice = never;
  */
 interface MapDocumentData {
   /**
-   * Title field in *Map*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: map.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
    * Map field in *Map*
    *
    * - **Field Type**: Text
@@ -260,17 +249,6 @@ type PageDocumentDataSlicesSlice = never;
  * Content for Page documents
  */
 interface PageDocumentData {
-  /**
-   * Title field in *Page*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
-
   /**
    * Gallery field in *Page*
    *
@@ -365,17 +343,6 @@ type PlacesDocumentDataSlicesSlice = PlacesSlice;
  * Content for Places documents
  */
 interface PlacesDocumentData {
-  /**
-   * Title field in *Places*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: places.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
   /**
    * Gallery field in *Places*
    *

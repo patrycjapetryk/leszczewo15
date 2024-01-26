@@ -13,15 +13,6 @@
           "placeholder": ""
         }
       },
-      "title": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Title",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "heading1"
-        }
-      },
       "gallery": {
         "type": "Link",
         "config": {

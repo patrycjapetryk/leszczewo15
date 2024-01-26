@@ -12,13 +12,6 @@
         },
         "type": "UID"
       },
-      "title": {
-        "type": "Text",
-        "config": {
-          "label": "Title",
-          "placeholder": ""
-        }
-      },
       "map": {
         "type": "Text",
         "config": {
