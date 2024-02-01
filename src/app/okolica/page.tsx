@@ -33,7 +33,7 @@ export default async function Index() {
       <ArticlesWrapper>
         <p className="mb-6">{description}</p>
         <Link className="mb-6 block" href="/mapa/okolica">
-          Zobacz na mapie
+          Znajdź na mapie
         </Link>
         <Places data={places.data} />
       </ArticlesWrapper>

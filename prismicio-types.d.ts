@@ -477,12 +477,12 @@ export interface GallerySliceVideoPrimary {
   /**
    * Video field in *Gallery → Primary*
    *
-   * - **Field Type**: Embed
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: gallery.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#embed
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  video: prismic.EmbedField;
+  video: prismic.KeyTextField;
 
   /**
    * Description field in *Gallery → Primary*
@@ -593,12 +593,12 @@ export interface GallerySliceVerticalVideoPrimary {
   /**
    * Video field in *Gallery → Primary*
    *
-   * - **Field Type**: Embed
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: gallery.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#embed
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  video: prismic.EmbedField;
+  video: prismic.KeyTextField;
 
   /**
    * Description2 field in *Gallery → Primary*

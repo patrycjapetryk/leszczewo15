@@ -48,7 +48,7 @@
       "imageUrl": "",
       "primary": {
         "video": {
-          "type": "Embed",
+          "type": "Text",
           "config": {
             "label": "Video",
             "placeholder": ""
@@ -129,7 +129,7 @@
           }
         },
         "video": {
-          "type": "Embed",
+          "type": "Text",
           "config": {
             "label": "Video",
             "placeholder": ""
