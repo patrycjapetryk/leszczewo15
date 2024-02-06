@@ -30,7 +30,7 @@ export default function GalleryHorizontalVideo({ slice }: GalleryProps) {
       data-slice-variation={variation}
     >
       <figure className="w-full">
-        <div className="relative w-full overflow-hidden bg-sage pt-[56.25%]">
+        <div className="relative w-full overflow-hidden bg-sage pt-[67.5%]">
           {isMounted && video && (
             <iframe
               src={`https://player.vimeo.com/video/${video}?background=1&quality=1080p`}
