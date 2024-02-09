@@ -10,10 +10,13 @@ export type TextProps = {
 };
 
 export default function Article({ description, teaser }: TextProps) {
-  const [isMobile, setIsMobile] = useState(true);
-  const [showTeaser, setShowTeaser] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean>();
+  const [showTeaser, setShowTeaser] = useState<boolean>();
 
   useEffect(() => {
+    setIsLoaded(true);
+
     function handleResize() {
       if (window.innerWidth >= 1280) {
         setIsMobile(false);
@@ -34,7 +37,7 @@ export default function Article({ description, teaser }: TextProps) {
     setShowTeaser((showTeaser) => !showTeaser);
   };
 
-  if (showTeaser && isMobile) {
+  if (isLoaded && isMobile && showTeaser) {
     return (
       <p className="flex flex-col gap-3">
         <span>{`${teaser}..`}</span>
@@ -43,7 +46,7 @@ export default function Article({ description, teaser }: TextProps) {
         </span>
       </p>
     );
-  } else if (!showTeaser && isMobile) {
+  } else if (isLoaded && isMobile && !showTeaser) {
     return (
       <div className="flex flex-col gap-3">
         <PrismicRichText
@@ -57,7 +60,7 @@ export default function Article({ description, teaser }: TextProps) {
         </span>
       </div>
     );
-  } else {
+  } else if (isLoaded) {
     return (
       <PrismicRichText
         field={description}
@@ -66,5 +69,7 @@ export default function Article({ description, teaser }: TextProps) {
         }}
       />
     );
+  } else {
+    return '';
   }
 }
