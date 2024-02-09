@@ -11,12 +11,15 @@ export type SlicesProps = {
 };
 
 export default function Places({ data }: SlicesProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
   const [showTeaser, setShowTeaser] = useState(true);
 
   const slices = data.slices;
 
   useEffect(() => {
+    setIsLoaded(true);
+
     function handleResize() {
       if (window.innerWidth >= 1280) {
         setIsMobile(false);
@@ -37,24 +40,30 @@ export default function Places({ data }: SlicesProps) {
     setShowTeaser((showTeaser) => !showTeaser);
   };
 
-  if (showTeaser && isMobile) {
+  if (isLoaded && isMobile && showTeaser) {
     return (
-      <p className="flex flex-col gap-3">
+      <p className="mt-6 flex flex-col gap-3">
         <span className="block cursor-pointer" onClick={handleReadMoreClick}>
           Czytaj więcej
         </span>
       </p>
     );
-  } else if (!showTeaser && isMobile) {
+  } else if (isLoaded && isMobile && !showTeaser) {
     return (
-      <div className="flex flex-col gap-3">
+      <div className="mt-6 flex flex-col gap-3">
         <SliceZone slices={slices} components={components} />
         <span className="block cursor-pointer" onClick={handleReadMoreClick}>
           Czytaj mniej
         </span>
       </div>
     );
+  } else if (isLoaded) {
+    return (
+      <div className="mt-6">
+        <SliceZone slices={slices} components={components} />
+      </div>
+    );
   } else {
-    return <SliceZone slices={slices} components={components} />;
+    return '';
   }
 }
