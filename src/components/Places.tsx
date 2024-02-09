@@ -20,17 +20,21 @@ export default function Places({ data }: SlicesProps) {
   useEffect(() => {
     setIsLoaded(true);
 
+    if (window.innerWidth >= 1280) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+      setShowTeaser(true);
+    }
+
     function handleResize() {
       if (window.innerWidth >= 1280) {
         setIsMobile(false);
-        setShowTeaser(false);
       } else {
         setIsMobile(true);
-        setShowTeaser(true);
       }
     }
 
-    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
