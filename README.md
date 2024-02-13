@@ -14,9 +14,9 @@ https://github.com/patrycjapetryk/leszczewo15/assets/51820512/291c91ff-bed3-4fe3
 
 &nbsp;
 
-## How to use my project
+## How to use it?
 
-Download project, install dependencies and run the following command:
+Download it, install dependencies and run the following command:
 
 ```sh
 npm run dev
