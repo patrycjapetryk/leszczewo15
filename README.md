@@ -22,5 +22,5 @@ Download it, install dependencies and run the following command:
 npm run dev
 ```
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/leszczewo15)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/patrycjapetryk/leszczewo15)
 
